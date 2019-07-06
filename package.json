@@ -17,7 +17,8 @@
     "classnames": "^2.1.1",
     "eve": "~0.4.2",
     "radium": "^0.18.1",
-    "snapsvg-cjs": "0.0.4"
+    "snapsvg-cjs": "0.0.4",
+    "snyk": "^1.192.3"
   },
   "devDependencies": {
     "babel-core": "^6.3.26",
@@ -66,7 +67,9 @@
     "watch": "gulp watch:lib",
     "release": "npm run build && gulp bump && npm run publish:version && gulp release",
     "release:minor": "npm run build && gulp bump:minor && npm run publish:version && gulp release",
-    "release:major": "npm run build && gulp bump:major && npm run publish:version && gulp release"
+    "release:major": "npm run build && gulp bump:major && npm run publish:version && gulp release",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "engines": {
     "node": ">=4.0.0"
@@ -79,5 +82,6 @@
     "react",
     "react-component"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
